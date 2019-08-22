@@ -18,12 +18,9 @@ export default {
   },
   data() {
     return {
+      lid: 0,
       employees: [
-        {
-          
-          name: "Richard Hendricks",
-          email: "richard@piedpiper.com"
-        }
+
       ]
     };
   },
@@ -31,7 +28,9 @@ export default {
     addEmployee(employee) {
       console.log(employee.name);
       console.log(employee.email);
-      this.employees.push(employee)
+      this.lid = this.lid + 1
+      this.employees = [...this.employees, {...employee, id: this.lid}];
+      
     }
   }
 };
